@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Sink Time Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('/static/images/ship1.jpg'); /* First ship image as the header background */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        main {
+             /* Second ship image as the form background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.85); /* White overlay to improve readability */
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #004080;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #004080;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0059b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ship Sink Time Predictor</h1>
+    </header>
+    <main>
+        <form action="/predict" method="POST">
+            <label for="weight">Weight of Ship (tons):</label>
+            <input type="number" step="any" name="weight" required>
+
+            <label for="length">Length of Ship (meters):</label>
+            <input type="number" step="any" name="length" required>
+
+            <label for="width">Width of Ship (meters):</label>
+            <input type="number" step="any" name="width" required>
+
+            <label for="position">Position of Hole (meters):</label>
+            <input type="number" step="any" name="position" required>
+
+            <label for="hole_length">Length of Hole (meters):</label>
+            <input type="number" step="any" name="hole_length" required>
+
+            <label for="hole_area">Hole Area (square meters):</label>
+            <input type="number" step="any" name="hole_area" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </main>
+</body>
+</html>
